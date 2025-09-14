@@ -1,3 +1,20 @@
+🚀 Ejecución del proyecto
+
+Clonar el repositorio:
+
+git clone https://github.com/usuario1/SistemasInventario.git
+
+
+Abrir el proyecto en NetBeans.
+
+Asegurar JDK 17 en Tools → Java Platforms.
+
+Clean and Build.
+
+Ejecutar Main.java.
+
+
+
 📦 Sistema de Inventario en Java con Patrones Creacionales
 👥 Integrantes del grupo
 
