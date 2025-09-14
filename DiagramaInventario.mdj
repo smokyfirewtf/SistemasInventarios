@@ -1,0 +1,171 @@
+{
+  "_type": "Project",
+  "_id": "PROJECT1",
+  "name": "UML_Diagrama_Corregido",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "MODEL1",
+      "name": "Model",
+      "ownedElements": [
+        {
+          "_type": "UMLClassDiagram",
+          "_id": "DIAGRAM1",
+          "name": "ClassDiagram1",
+          "ownedViews": []
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "PRODUCTO",
+          "name": "Producto",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "name": "nombre: String"
+            },
+            {
+              "_type": "UMLAttribute",
+              "name": "precio: double"
+            },
+            {
+              "_type": "UMLAttribute",
+              "name": "cantidad: int"
+            }
+          ],
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "name": "+mostrarDetalles(): void"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "PRODUCTOE",
+          "name": "ProductoElectronico",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "name": "marca: String"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "PRODUCTOO",
+          "name": "ProductoOficina",
+          "attributes": [
+            {
+              "_type": "UMLAttribute",
+              "name": "material: String"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "INVENTARIO",
+          "name": "Inventario",
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "name": "+agregarProducto(p: Producto): void"
+            },
+            {
+              "_type": "UMLOperation",
+              "name": "+mostrarInventario(): void"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "FACTORY",
+          "name": "ProductoFactory",
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "name": "+crearProducto(tipo: String): Producto"
+            }
+          ]
+        },
+        {
+          "_type": "UMLClass",
+          "_id": "MAIN",
+          "name": "Main",
+          "operations": [
+            {
+              "_type": "UMLOperation",
+              "name": "+main(args: String[]): void"
+            }
+          ]
+        },
+        {
+          "_type": "UMLInterface",
+          "_id": "CLONEABLE",
+          "name": "Cloneable"
+        },
+        {
+          "_type": "UMLGeneralization",
+          "_id": "GEN1",
+          "source": {
+            "$ref": "PRODUCTOE"
+          },
+          "target": {
+            "$ref": "PRODUCTO"
+          }
+        },
+        {
+          "_type": "UMLGeneralization",
+          "_id": "GEN2",
+          "source": {
+            "$ref": "PRODUCTOO"
+          },
+          "target": {
+            "$ref": "PRODUCTO"
+          }
+        },
+        {
+          "_type": "UMLInterfaceRealization",
+          "_id": "REAL1",
+          "source": {
+            "$ref": "PRODUCTO"
+          },
+          "target": {
+            "$ref": "CLONEABLE"
+          }
+        },
+        {
+          "_type": "UMLAssociation",
+          "_id": "ASSOC1",
+          "end1": {
+            "reference": "INVENTARIO",
+            "multiplicity": "1"
+          },
+          "end2": {
+            "reference": "PRODUCTO",
+            "multiplicity": "*"
+          }
+        },
+        {
+          "_type": "UMLDependency",
+          "_id": "DEP1",
+          "source": {
+            "$ref": "FACTORY"
+          },
+          "target": {
+            "$ref": "PRODUCTO"
+          }
+        },
+        {
+          "_type": "UMLDependency",
+          "_id": "DEP2",
+          "source": {
+            "$ref": "MAIN"
+          },
+          "target": {
+            "$ref": "INVENTARIO"
+          }
+        }
+      ]
+    }
+  ]
+}
